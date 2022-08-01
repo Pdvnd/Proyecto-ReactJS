@@ -1,6 +1,10 @@
 
 import './App.css';
-import {NavBar} from './components/NavBar';
+import {NavBar} from '../src/components/NavBar/NavBar';
+import { ItemCount } from './components/ItemCount/ItemCount';
+
+
+
 
 
 
@@ -9,6 +13,7 @@ function App() {
     <>
       <NavBar>
       </NavBar>
+     <ItemCount></ItemCount>
 
     </>
   );
