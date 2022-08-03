@@ -1,15 +1,14 @@
 import '../../App';
-import './NavBar.css';
 import { CartWidget } from './CartWidget/CartWidget';
-import {ItemListContainer} from '../Item/ItemListContainer'
-
-
+import './NavBar.css';
 
 export const NavBar = () => {
   return(
     <div className='navDiv'><nav className=' navbar navbar-expand-lg navbar-light '>
     <div>< img className='imgNav'src='https://th.bing.com/th/id/R.fc763da7b46443f858b5983305867b11?rik=mAX1Eh8EYgJzxA&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f13%2fAvengers-Movie-Logo-PNG-Image.png&ehk=bFuzxM5albpam5szw%2b1r6NHZm2cpNWxJ3YFdMH7JpxA%3d&risl=&pid=ImgRaw&r=0'/></div>
   <div className="container-fluid">
+  <CartWidget>
+  </CartWidget>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -41,11 +40,7 @@ export const NavBar = () => {
         <button className='btn btn-outline-success' type="submit">Buscar</button>
       </form>
     </div>
-    {
-    <CartWidget><ItemListContainer titulo='Holaaa'></ItemListContainer>
-      </CartWidget>}
   </div>
 </nav></div>
   );
 }
-

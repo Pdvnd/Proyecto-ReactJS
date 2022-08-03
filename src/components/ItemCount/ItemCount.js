@@ -28,7 +28,6 @@ export const ItemCount = ({ onAdd }) => {
                 <button onClick={handleRemove} type='button' className='circleBtn'>-</button>
             </div>
             <div>
-            <img src='https://cdn.awsli.com.br/800x800/396/396949/produto/62677338/9d9e008251.jpg'className='card-img-top'  alt='imagen' />
             </div>
             <button onClick={() => onAdd(count)} type='button' className='addCart btnCart'>Añadir al carrito</button>
         </div>
