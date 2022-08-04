@@ -7,13 +7,13 @@ export const NavBar = () => {
   return(
     <div className='navDiv'><nav className=' navbar navbar-expand-lg navbar-light '>
     <div>< img className='imgNav'src='https://th.bing.com/th/id/R.fc763da7b46443f858b5983305867b11?rik=mAX1Eh8EYgJzxA&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f13%2fAvengers-Movie-Logo-PNG-Image.png&ehk=bFuzxM5albpam5szw%2b1r6NHZm2cpNWxJ3YFdMH7JpxA%3d&risl=&pid=ImgRaw&r=0'/></div>
-  <div className="container-fluid">
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <div className='container-fluid'>
+    <button className='navbar-toggler' type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
+        <li className='nav-item'>
           <a className="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li className="nav-item">

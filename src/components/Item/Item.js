@@ -11,7 +11,7 @@ export function Item ({data}){
         <p className='card-text'>${data.price}</p>
       </div>
     </div>
-    <ItemCount key = {data.id}></ItemCount>
+    <ItemCount key = {data.id} stock={data.stock}></ItemCount>
   </div>
 )
 }

@@ -7,7 +7,7 @@ export const ItemListContainer = () => {
   useEffect(() => {
     setTimeout(() => {
       setData(Data);
-    }, 2000);
+    }, 5000);
   }, []);
   return (
     <>

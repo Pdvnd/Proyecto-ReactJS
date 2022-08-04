@@ -1,16 +1,17 @@
 import './ItemCount.css'
 import React, { useState, useEffect} from 'react';
 
-export const ItemCount = ({ onAdd }) => {
+
+export const ItemCount = ({ onAdd, initial, stock }) => {
     const [count, setCount] = useState(0);
 
     const handleAdd = () => {
-        if (count < 20) {
+        if (count < stock) {
             setCount(count + 1);
         }
     }
     const handleRemove = () => {
-        if (count > 0) {
+        if (count > initial) {
             setCount(count - 1);
         }
     }
