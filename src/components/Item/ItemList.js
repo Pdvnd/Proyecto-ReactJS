@@ -1,18 +1,16 @@
-import './Item.css';
-import { Data } from './Data/Data';
+import { Item } from './Item';
+import './ItemList.css';
 
-function ItemList ({ products }) {
+export function ItemList ({ products }) {
   return (
-    <div className="container">
-      <div className="row row-cols-1 row-cols-md-3 g-6 listContainer">
+    <div className='container'>
+      <div className='row row-cols-1 row-cols-md-3 g-6 listContainer'>
       {
           products.map(data =>{
+            console.log(data)
             return(
-            <Data
-              id={data.id}
-              imgUrl={data.imgUrl}
-              title={data.title}
-              price={data.price}
+            <Item
+             data={data}
             />
           )
         })}
@@ -20,5 +18,3 @@ function ItemList ({ products }) {
     </div>
   )
 };
-
-export default ItemList;

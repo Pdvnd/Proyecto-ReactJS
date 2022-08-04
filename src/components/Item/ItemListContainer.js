@@ -1,16 +1,17 @@
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Data } from "./Data/Data";
+import { ItemList } from "./ItemList";
 
-const [data, setData] = useState([]);
-useEffect(()=> {
-    setTimeout(()=>{
-        const task = new Promise ((resolve, reject) =>{
-            setData()
-            resolve()
-            console.log('Descargado con exito', data);});
-            task.then(()=> {
-                console.log('Datos cargados'); })
-                .catch((err)=> {
-                    console.log('Error');
-                })
-            }, 2000)
-    },[])
+export const ItemListContainer = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    setTimeout(() => {
+      setData(Data);
+    }, 2000);
+  }, []);
+  return (
+    <>
+      <ItemList products={data} />
+    </>
+  );
+};
