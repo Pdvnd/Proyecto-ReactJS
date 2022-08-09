@@ -1,5 +1,9 @@
 import { ItemCount } from '../ItemCount/ItemCount';
 import './ItemList.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+
 
 export function Item ({data}){
   return(
@@ -12,6 +16,7 @@ export function Item ({data}){
       </div>
     </div>
     <ItemCount key = {data.id} stock={data.stock}></ItemCount>
+    <Link to={`/data/${data}`} className="btn detailsBtn">Ver detalle</Link>
   </div>
 )
 }
