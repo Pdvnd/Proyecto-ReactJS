@@ -1,11 +1,9 @@
 import { ItemCount } from "../ItemCount/ItemCount"
 import { useState, useContext } from "react"
 import { Link } from "react-router-dom";
-import { context } from "../../Context/ContextProvider"
 
 export const ItemDetail = ({data}) => {
     const { imgUrl, title, price, description, id } = data;
-    const {handleAddItem } = useContext(context)
 
     const handleClg = () => {
         handleAddItem(data, id, amountItemCount)
