@@ -17,7 +17,7 @@
   
   .btn {
     align-items: center;
-    color: hsl(338, 33%, 16%);
+    color: hsl(0, 0%, 1%);
     position: relative;
     text-decoration: none;
     font-weight: 400;
@@ -47,7 +47,7 @@
     padding: 0.70rem 0rem;
     font-size: 14px;
     border-radius: 0rem;
-    border-bottom: 3px solid hsl(338, 33%, 16%);
+    border-bottom: 3px solid hsl(186, 28%, 51%);
     align-items: center;
     width: 12rem;
     height: 2.5rem;
@@ -55,8 +55,8 @@
   
   .detailsBtn:hover {
     background-size: 200% 200%;
-    background-image: linear-gradient(to top, hsl(338, 33%, 16%) 100%, transparent 100%);
+    background-image: linear-gradient(to top, hsla(191, 33%, 16%, 0.603) 100%, transparent 100%);
     color: white;
-    border-bottom: 3px solid hsl(338, 33%, 16%);
+    border-bottom: 3px solid hsla(184, 33%, 16%, 0.402);
     transition: all 0.09s ease-in;
   }

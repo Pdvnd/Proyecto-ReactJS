@@ -7,11 +7,13 @@ export const ItemListContainer = () => {
   useEffect(() => {
     setTimeout(() => {
       setData(Data);
-    }, 5000);
-  }, []);
+    }, 2000);
+  });
+
+
   return (
     <>
-      <ItemList products={data} />
+      <ItemList props={data} />
     </>
   );
 };

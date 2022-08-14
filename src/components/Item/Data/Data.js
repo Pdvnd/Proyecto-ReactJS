@@ -5,7 +5,8 @@ export const Data = [
         title: 'Game of Avengers 2022',
         price: 20,
         stock: 5,
-        description: 'Avengers es un videojuego lanzado en 2021 blablabla'
+        description: 'Avengers es un videojuego lanzado en 2021 blablabla',
+        category:'game'
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ export const Data = [
         title: 'Game of Avengers 2022',
         price: 20,
         stock: 7,
-        description: 'Avengers es un videojuego lanzado en 2021 blablabla'
+        description: 'Avengers es un videojuego lanzado en 2021 blablabla',
+        category: 'comic'
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ export const Data = [
         title: 'Game of Avengers 2022',
         price: 20,
         stock: 10,
-        description: 'Avengers es un videojuego lanzado en 2021 blablabla'
+        description: 'Avengers es un videojuego lanzado en 2021 blablabla',
+        category: 'game'
         
     },
     {
@@ -30,7 +33,8 @@ export const Data = [
         title: 'Game of Avengers 2022',
         price: 20,
         stock: 8,
-        description: 'Avengers es un videojuego lanzado en 2021 blablabla'
+        description: 'Avengers es un videojuego lanzado en 2021 blablabla',
+        category: 'comic'
     },
     {
         id: 5,
@@ -38,7 +42,8 @@ export const Data = [
         title: 'Game of Avengers 2022',
         price: 20,
         stock: 9,
-        description: 'Avengers es un videojuego lanzado en 2021 blablabla'
+        description: 'Avengers es un videojuego lanzado en 2021 blablabla',
+        category: 'game'
     },
     {
         id: 6,
@@ -46,6 +51,7 @@ export const Data = [
         title: 'Game of Avengers 2022',
         price: 20,
         stock: 15,
-        description: 'Avengers es un videojuego lanzado en 2021 blablabla'
+        description: 'Avengers es un videojuego lanzado en 2021 blablabla',
+        category: 'comic'
     }
 ];
