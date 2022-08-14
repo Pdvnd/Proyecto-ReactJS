@@ -10,7 +10,7 @@ export function ItemList ({ products }) {
             console.log(data)
             return(
             <Item
-             data={data}
+            data={data}
             />
           )
         })}

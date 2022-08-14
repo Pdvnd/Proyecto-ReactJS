@@ -5,9 +5,6 @@ import { Link } from "react-router-dom";
 export const ItemDetail = ({data}) => {
     const { imgUrl, title, price, description, id } = data;
 
-    const handleClg = () => {
-        handleAddItem(data, id, amountItemCount)
-    }
 
     const [amountItemCount, setAmountItemCount] = useState(null);
     const onAdd = (count) => {
@@ -26,7 +23,7 @@ export const ItemDetail = ({data}) => {
                 <p>{description}</p>
                 {
                     <ItemCount
-                        initial={1}
+                        initial={0}
                         stock={10}
                         onAdd={onAdd}
                         data={data}
@@ -34,7 +31,7 @@ export const ItemDetail = ({data}) => {
                 }
                 {
                     amountItemCount >= 1 &&
-                    <Link onClick={handleClg} className="button buttonFinish" to="/cart">Terminar Compra</Link>
+                    <Link className="button buttonFinish" to="/cart">Terminar Compra</Link>
                 }
             </div>
         </div>
