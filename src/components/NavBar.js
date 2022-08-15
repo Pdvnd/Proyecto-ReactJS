@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import '../App';
 import './NavBar.css';
 
@@ -9,14 +10,17 @@ export const NavBar = () => {
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><NavLink class="dropdown-item" to='/'>Home</NavLink></li>
+          </ul>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <NavLink class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categoria
-          </a>
+          </NavLink>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Game</a></li>
-            <li><a class="dropdown-item" href="#">Comic</a></li>
+            <li><NavLink class="dropdown-item" to='/categoria/:Game'>Game</NavLink></li>
+            <li><NavLink class="dropdown-item" to='/categoria/:Comic'>Comic</NavLink></li>
           </ul>
         </li>
       </ul>

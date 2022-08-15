@@ -3,29 +3,30 @@ import { Contenido } from "./Data/Data";
 import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
 
-export const ItemListContainer = ({texto}) => {
+export const ItemListContainer = ({ }) => {
   const [data, setData] = useState([]);
-  const {categoriaId} = useParams();
+  const  {categoriaId}  = useParams();
+  const getData = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(Contenido);
+    }, 2000);
+  });
+
   useEffect(() => {
-    const getData = new Promise(resolve =>{
-      setTimeout(()=>{
-        resolve(Contenido)
-      }, 2000)
-    });
-    if (categoriaId){
-      getData.then(res => res.filter(Contenido => Contenido.category === categoriaId));
-    }
-    else {
-      getData.then(res => setData(res));
-    }
     
   
-  }, [categoriaId])
+      getData.then((res) =>{
+      const filteredData = res.filter((Contenido) => Contenido.category === categoriaId)
+      setData(filteredData)
+      console.log(filteredData)
+    })
+  
+  }, [categoriaId]);
 
   return (
     <>
-      <ItemList Data={Contenido}/>
-      <Contenido greeting={texto}/>
+      <ItemList data={data} />
     </>
   );
 };
+//<Contenido greeting={texto}/>

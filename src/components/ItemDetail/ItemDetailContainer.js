@@ -22,7 +22,8 @@ export const ItemDetailContainer = () => {
     },[]);
     return (
         <div >
-            {<ItemDetail data ={data}></ItemDetail>}
+            {<ItemDetail key ={data.id} 
+            data={data}></ItemDetail>}
         </div>
     );
 };

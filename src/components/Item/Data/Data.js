@@ -6,7 +6,7 @@ export const Contenido = [
         price: 20,
         stock: 5,
         description: 'Avengers es un videojuego lanzado en 2021 blablabla',
-        category:'game'
+        category:'Game'
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ export const Contenido = [
         price: 20,
         stock: 7,
         description: 'Avengers es un videojuego lanzado en 2021 blablabla',
-        category: 'comic'
+        category: 'Comic'
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ export const Contenido = [
         price: 20,
         stock: 10,
         description: 'Avengers es un videojuego lanzado en 2021 blablabla',
-        category: 'game'
+        category: 'Game'
         
     },
     {
@@ -34,7 +34,7 @@ export const Contenido = [
         price: 20,
         stock: 8,
         description: 'Avengers es un videojuego lanzado en 2021 blablabla',
-        category: 'comic'
+        category: 'Comic'
     },
     {
         id: 5,
@@ -43,7 +43,7 @@ export const Contenido = [
         price: 20,
         stock: 9,
         description: 'Avengers es un videojuego lanzado en 2021 blablabla',
-        category: 'game'
+        category: 'Game'
     },
     {
         id: 6,
@@ -52,6 +52,6 @@ export const Contenido = [
         price: 20,
         stock: 15,
         description: 'Avengers es un videojuego lanzado en 2021 blablabla',
-        category: 'comic'
+        category: 'Comic'
     }
 ];

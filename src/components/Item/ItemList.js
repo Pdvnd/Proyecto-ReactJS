@@ -1,18 +1,17 @@
 import { Item } from './Item';
 import './ItemList.css';
 import React from 'react';
-import { Contenido } from './Data/Data';
 
-
-
-export const ItemList = ({data= []}) => {
-  return (
+export const ItemList = ({data}) => {
+  console.log(data)
+    return (
     <div className="container">
       <div className="row row-cols-1 row-cols-md-3 g-6 listContainer">
         {
-          Contenido.map((Contenido =>
+          data.map((element =>
             <Item
-              key ={Contenido.id} contenido={data}
+              key ={element.id} 
+              data={element}
             />
           )
         )}
