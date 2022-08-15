@@ -1,30 +1,28 @@
 import { useState, useEffect } from "react";
 import { ItemDetail } from "./ItemDetail";
-import { Spinner } from "../Spinner/Spinner";
-import { Data } from "../Item/Data/Data";
+import { Contenido } from "../Item/Data/Data";
 import { useParams } from "react-router-dom";
 
+
 export const ItemDetailContainer = () => {
-    const {categoriaId} = useParams();
+    const {detallesId} = useParams();
     const [data, setData] = useState({});
-    const [loading] = useState(true);
+
 
 
     useEffect (()=> {
         const getData = new Promise(resolve =>{
             setTimeout(()=>{
-                resolve(Data);
+                resolve(Contenido);
             }, 1000);
         });
-        if (Data){
-            getData.then(res=> setData(res.filter(data => data.category === categoriaId)));
-            } else {
-            getData.then(res=> setData(res));
-            } ;
-    },[categoriaId]);
+        if (Contenido){
+            getData.then(res=> setData(res.find(Contenido => Contenido.id === parseInt( detallesId))));
+            }
+    },[]);
     return (
         <div >
-            {loading ? <Spinner/> : <ItemDetail props ={data}></ItemDetail>}
+            {<ItemDetail data ={data}></ItemDetail>}
         </div>
     );
 };

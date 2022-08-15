@@ -1,12 +1,15 @@
 import { ItemCount } from "../ItemCount/ItemCount"
-import { ItemList } from "../Item/ItemList";
+import React, {useState} from "react";
+import { Link } from "react-router-dom";
+
 
 
 export const ItemDetail = ({data}) => {
-    const onAdd = (quantity) => {
-        console.log(`Compraste ${quantity} unidades`)
-    };
+    const [goToCart, setGoToCart] = useState(false);
 
+    const onAdd = (quantity) => {
+       setGoToCart(true);
+    };
     return (
         <div className="details">
             <div className="big-img">
@@ -15,13 +18,14 @@ export const ItemDetail = ({data}) => {
             <div className="box">
                 <div className="row">
                     <h2>{data.title}</h2>
-                    <span>$ {data.rice}</span>
+                    <span>$ {data.price}</span>
                 </div>
                 <p>{data.description}</p>
-                <ItemCount
-                    onAdd={onAdd}
-                    />
-                <ItemList props ={data}/>
+                {
+                    goToCart
+                    ? <Link to='/cart'>Terminar Compra</Link>
+                    : <ItemCount initial={3} stock={5} onAdd={onAdd}></ItemCount>
+                }
             </div>
         </div>
     )}

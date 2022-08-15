@@ -1,4 +1,4 @@
-export const Data = [
+export const Contenido = [
     {
         id: 1,
         imgUrl: 'https://cdn.awsli.com.br/800x800/396/396949/produto/62677338/9d9e008251.jpg',

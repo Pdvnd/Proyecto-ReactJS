@@ -1,6 +1,8 @@
 import '../../App';
 import { CartWidget } from './CartWidget/CartWidget';
 import './NavBar.css';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 
 export const NavBar = () => {
@@ -14,24 +16,17 @@ export const NavBar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className='nav-item'>
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Historias</a>
+          <NavLink className="nav-link active" aria-current="page" to='/' >Home</NavLink>
         </li>
         <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Juegos
-          </a>
+          <NavLink className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categoria
+          </NavLink>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="#">Acción</a></li>
-            <li><a className="dropdown-item" href="#">Rompecabezas</a></li>
+            <li><NavLink className="dropdown-item" to='/categoria/game'>Game</NavLink></li>
             <li><hr className="dropdown-divider"></hr></li>
-            <li><a className="dropdown-item" href="#">Combate</a></li>
+            <li><NavLink className="dropdown-item" to='/categoria/comic'>Comic</NavLink></li>
           </ul>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link Enable" href="#" tabindex="-1" aria-disabled="true">Más</a>
         </li>
       </ul>
       <form className="d-flex">
@@ -39,7 +34,7 @@ export const NavBar = () => {
         <button className='btn btn-outline-success' type="submit">Buscar</button>
       </form>
     </div>
-    <CartWidget></CartWidget>
+    <NavLink to='/cart'><CartWidget></CartWidget></NavLink>
   </div>
 </nav></div>
   );
