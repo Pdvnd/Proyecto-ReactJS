@@ -1,0 +1,26 @@
+.navDiv {
+    background-color: hsla(207, 82%, 26%, 0.473);
+    height: 7rem;
+    font-size: 1.60rem;
+    letter-spacing: 0.2rem;
+    color: white;
+    justify-content: space-between;
+    
+}
+
+.container-fluid{
+    margin-left: 10rem;
+
+}
+
+.btn {
+    color: white;
+}
+.nav-link {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.imgNav {
+    width: 15rem;
+    margin-left: 2rem;
+}
