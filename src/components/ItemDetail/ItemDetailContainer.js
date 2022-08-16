@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 
 export const ItemDetailContainer = () => {
-    const {detallesId} = useParams();
+    const {detalleId} = useParams();
     const [data, setData] = useState({});
 
 
@@ -17,7 +17,7 @@ export const ItemDetailContainer = () => {
             }, 1000);
         });
         if (Contenido){
-            getData.then(res=> setData(res.find(Contenido => Contenido.id === parseInt( detallesId))));
+            getData.then(res=> setData(res.find(Contenido => Contenido.id === parseInt( detalleId))));
             }
     },[]);
     return (

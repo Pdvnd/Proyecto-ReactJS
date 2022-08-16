@@ -4,26 +4,26 @@ import { Link } from "react-router-dom";
 
 
 
-export const ItemDetail = ({imgUrl, price, id, description, title}) => {
+export const ItemDetail = ({data}) => {
     const [goToCart, setGoToCart] = useState(false);
 
     const onAdd = (quantity) => {
     setGoToCart(true);
     };
     return (
-        <div className="details">
-            <div className="big-img">
-                <img src={imgUrl} alt="" />
+        <div className='details'>
+            <div className='big-img'>
+                <img src={data.imgUrl} alt="" />
             </div>
-            <div className="box">
-                <div className="row">
-                    <h2>{title}</h2>
-                    <span>${price}</span>
+            <div className='box'>
+                <div className='row'>
+                    <h2>{data.title}</h2>
+                    <span>${data.price}</span>
                 </div>
-                <p>{description}</p>
+                <p>{data.description}</p>
                 {
                     goToCart
-                    ? <Link to='/cart'>Terminar Compra</Link>
+                    ? <Link to='/cart' className='btn detailsBtn'>Terminar Compra</Link>
                     : <ItemCount initial={3} stock={5} onAdd={onAdd}></ItemCount>
                 }
             </div>
