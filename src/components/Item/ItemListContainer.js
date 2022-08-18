@@ -3,6 +3,7 @@ import { Contenido } from "./Data/Data";
 import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
 import { Loader } from "../Loader/Loader";
+import { Titulo } from "../Titulo/Titulo";
 
 export const ItemListContainer = () => {
   const [data, setData] = useState([]);
@@ -36,6 +37,7 @@ export const ItemListContainer = () => {
   return (
     <div className="row row-cols-2 row-cols-md-3 g-6">
       {load && <Loader />}
+      <Titulo/>
       <ItemList
         data={data}
       />

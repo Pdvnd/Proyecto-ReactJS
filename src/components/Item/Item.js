@@ -1,13 +1,7 @@
 import { Link } from 'react-router-dom';
 import './ItemList.css';
-import React from 'react';
+import React, {useContext} from 'react';
 
-
-
-
-
-//<ItemCount key = {id} stock={data.stock}></ItemCount>
-//<Link to={`/data/${data}`} className="btn detailsBtn">Ver detalles</Link>
 
 export function Item ({data}) {
   return(

@@ -1,6 +1,8 @@
 import './CartWidget.css';
 
+
 export const CartWidget = () => {
+
   return (
     <div>
       <button  className='icono-bag'>
