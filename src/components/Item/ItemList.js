@@ -10,8 +10,10 @@ export const ItemList = ({data}) => {
         {
           data.map((element =>
             <Item
-              key ={element.id} 
-              data={element}
+            id={element.id}
+            imgUrl={element.imgUrl}
+            title={element.title}
+            price={element.price}
             />
           )
         )}
