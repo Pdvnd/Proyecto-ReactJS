@@ -25,8 +25,8 @@ export const ItemDetailContainer = () => {
     return (
         <div>
         {load && <Loader />}
-        {<ItemDetail key ={data} 
-            data={data}></ItemDetail>}
+        <ItemDetail key ={data} 
+            data={data}></ItemDetail>
         </div>
     );
 };
