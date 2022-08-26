@@ -7,45 +7,22 @@ import {getFirestore, collection, getDocs, query, where } from "firebase/firesto
 
 export const ItemListContainer = () => {
   const [data, setData] = useState([]);
+
   const  {categoriaId}  = useParams();
+
   const [load, setLoad] = useState(true);
-
-
-//   useEffect(() => {
-//     const collectionRef = categoriaId
-//       ? query(collection(firestoreDb, 'productos'), where('category', '==', categoriaId))
-//       : collection(firestoreDb, 'productos')
-
-//     getDocs(collectionRef).then(response => {
-//       const products = response.docs.map(doc => {
-//         return { id: doc.id, ...doc.data() }
-//       })
-//       setData(products)
-//       setLoad(false)
-//     })
-
-//   }, [categoriaId]);
-
-//   return (
-//     <div className="row row-cols-2 row-cols-md-3 g-6">
-//       {load && <Loader />}
-//       <ItemList
-//         datas={data}
-//       />
-//     </div>
-
 
   useEffect(() => {
     const querydb = getFirestore();
-    const queryCollection = collection(querydb, 'Productos');
+    const queryCollection = collection(querydb, 'products');
 if (categoriaId){
-  const  queryFilter = query(queryCollection, where('category', '==', categoriaId));
+  const  queryFilter = query(queryCollection, where('category', '<=', categoriaId));
   getDocs(queryFilter)
-  .then(res => setData(res.docs.map(productos =>({id: productos.id, ...productos.data()}))));
+    .then(res => setData(res.docs.map(product => ({id: product.id, ...product.data() }))));
 }
     else {
       getDocs(queryCollection)
-      .then(res => setData(res.docs.map(productos =>({id: productos.id, ...productos.data()}))));
+      .then(res => setData(res.docs.map(product =>({id: product.id, ...product.data()}))));
     }
     setData(data)
     setLoad(false)

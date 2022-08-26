@@ -25,7 +25,6 @@ export const CartProvider = ({ children }) => {
         }
         setCart(newCart);
     }
-    console.log('Carrito :' , cart);
     const limpiarCart = () => setCart([]);
     const enElCarrito = (id) => {
         return cart.find(product => product.id === id) ? true : false;

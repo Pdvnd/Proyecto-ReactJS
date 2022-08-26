@@ -21,7 +21,7 @@ return (
         cart.map(product => <ItemCart key={product.id} product={product}/>)
     }
     <p>
-        Total: {totalPrecio()}
+        total: {totalPrecio()};
     </p>
     </>
 )
