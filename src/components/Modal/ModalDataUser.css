@@ -1,37 +1,8 @@
-.containerBtn {
+.btnComprar {
     display: flex;
-    height: 4rem;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  
-  .circleBtn {
-    font-size: 1rem;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    background: hsl(143, 51%, 21%);
-    color: white;
-    outline: none;
-    cursor: pointer;
-    height: 1.5rem;
-    width: 1.5rem;
-    border-color: hsl(122, 32%, 44%);
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-  }
-  
-  .count {
-    padding: 0rem 1rem;
-
-  }
-  
-  .addCart {
-    align-items: center;
-    color: hsl(0, 0%, 5%);
+    color: hsl(140, 33%, 16%);
     position: relative;
     text-decoration: none;
     font-weight: 400;
@@ -49,25 +20,23 @@
     -moz-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
-    letter-spacing: 0.2rem;
   }
   
-  .btnCart {
+  .comprarBtn {
     margin: auto auto;
-    padding: 0.70rem 0rem;
+    padding: 0rem 0rem;
     font-size: 14px;
     border-radius: 0rem;
-    border-bottom: 3px solid hsl(139, 51%, 21%);
+    border-bottom: 3px solid hsl(140, 33%, 16%);
     align-items: center;
-    justify-content: center;
-    width: 28rem;
+    width: 70%;
     height: 2.5rem;
   }
   
-  .btnCart:hover {
+  .comprarBtn:hover {
     background-size: 200% 200%;
     background-image: linear-gradient(to top, hsl(147, 44%, 38%) 100%, transparent 100%);
     color: white;
-    border-bottom: 3px solid hsl(0, 0%, 0%);
+    border-bottom: 3px solid hsl(149, 42%, 25%);
     transition: all 0.09s ease-in;
   }

@@ -3,7 +3,7 @@ import React, { useState, useEffect} from 'react';
 
 
 export const ItemCount = ({ onAdd, initial, stock }) => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(initial);
 
     const handleAdd = () => {
         if (count < stock) {
@@ -23,15 +23,13 @@ export const ItemCount = ({ onAdd, initial, stock }) => {
 
     return (
         <div>
-            <div className='containerBtn'>
-                <button onClick={handleAdd} type="button" className='circleBtn'>+</button>
-                <p><spam className='count'>{count}</spam></p>
-                <button onClick={handleRemove} type='button' className='circleBtn'>-</button>
-            </div>
-            <div>
-            </div>
-            <button onClick={() => onAdd(count)} type='button' className="btn detailsBtn">Añadir al carrito</button>
+        <div className="containerBtn">
+            <button onClick={handleAdd} type="button" className="circleBtn">+</button>
+            <p><spam className="count">{count}</spam></p>
+            <button onClick={handleRemove} type="button" className="circleBtn">-</button>
         </div>
+        <button onClick={() => onAdd(count)} type="button" className="addCart btnCart">Añadir a tu cesta</button>
+    </div> 
         
     )
     

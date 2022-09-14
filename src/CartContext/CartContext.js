@@ -1,47 +1,75 @@
-import React, { useState, useContext } from "react";
-export const useCartContext = () => useContext(CartContext);
-const CartContext = React.createContext([]);
+import React, { createContext, useState } from 'react';
+
+export const context = createContext()
+const { Provider } = context;
+
+export const ContextProvider = ({ children }) => {
+
+  const [cart, setCart] = useState([])
+  const [totalUn, setTotalUn] = useState(0)
+  const [totalPrice, setTotalPrice] = useState(0)
+  const [buyerData, setBuyerData] = useState(0)
 
 
-
-
-export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
-
-    const totalPrecio = () => {
-        return cart.reduce((prev, act) => prev + act.quantity * act.price, 0); 
-    }
-    const totalProductos = () => cart.reduce ((acumulador, productoActual)=> acumulador + productoActual.quantity, 0);
-
-    const agregarProducto = (item, quantity) => {
-        let newCart;
-        let product = cart.find(product => product.id === item.id);
-        if (product) {
-            product.quantity += quantity;
-            newCart = [...cart];
-        } else {
-            product = {...item, quantity: quantity};
-            newCart = [...cart, product];
+  const handleAddItem = (item, id, confirmAmount) => {
+    const itemsPrice = item.price * confirmAmount;
+    if (isInCart(item)) {
+      cart.map(product => {
+        if (product.id === id) {
+          product.cant = product.cant + confirmAmount
         }
-        setCart(newCart);
+      })
+    } else {
+      item.cant = confirmAmount
+      setCart([...cart, item])
     }
-    const limpiarCart = () => setCart([]);
-    const enElCarrito = (id) => {
-        return cart.find(product => product.id === id) ? true : false;
-    }
-    const quitarCarrito = (id) => setCart(cart.filter(product => product.id !== id));
-    return (
-        <CartContext.Provider value={{
-            limpiarCart, 
-            enElCarrito,
-            quitarCarrito,
-            agregarProducto, 
-            totalPrecio, 
-            totalProductos,
+    setTotalUn(totalUn + confirmAmount);
 
-            
-            cart}}>
-            {children}
-        </CartContext.Provider>
-    )
+    setTotalPrice(totalPrice + itemsPrice);
+  };
+
+
+  const handeleDeleteItem = (id) => {
+
+    const newCartValue = cart.filter(product => product.id !== id)
+    cart.map(item => {
+
+      const itemsPrice = item.price * item.cant;
+
+      if (item.id === id) {
+
+        setTotalUn(totalUn - item.cant);
+        setTotalPrice(totalPrice - itemsPrice);
+
+      }
+    })
+    setCart(newCartValue)
+  };
+
+  const handleClearCart = () => {
+    setCart([])
+  };
+
+  const shipingData = (data) => {
+    setBuyerData(data)
+  }
+
+  const isInCart = (item) => {
+    const isInCartValue = cart.includes(item)
+    return isInCartValue
+  }
+  const ContextValue = {
+    cart,
+    handleAddItem,
+    totalUn,
+    handeleDeleteItem,
+    totalPrice,
+    shipingData,
+    buyerData
+  }
+  return (
+    <Provider value={ContextValue}>
+      {children}
+    </Provider>
+  )
 }

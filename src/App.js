@@ -5,13 +5,13 @@ import { Cart } from "./components/Cart/Cart"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "./App.css";
 import React from "react";
-import { CartProvider } from "./CartContext/CartContext";
+import {ContextProvider } from "./CartContext/CartContext";
 
 function App() {
   return (
   <>
     <BrowserRouter>
-        <CartProvider>
+        <ContextProvider>
         <NavBar/>
         <Routes>
             <Route path='/' element={<ItemListContainer />} />
@@ -19,7 +19,7 @@ function App() {
             <Route path='/cart' element={<Cart />} />
             <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>}/>
         </Routes>
-        </CartProvider>
+        </ContextProvider>
     </BrowserRouter>
   </>
   )}

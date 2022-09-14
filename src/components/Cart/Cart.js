@@ -1,48 +1,50 @@
-import React from "react";
-import {addDoc, collection, getFirestore} from "firebase/firestore";
-import { useCartContext } from "../../CartContext/CartContext"
-import { Link } from "react-router-dom";
-import { ItemCart } from "../ItemCart/ItemCart";
+import { useContext } from "react";
+import { context } from "../../CartContext/CartContext";
+import { handleBuy } from "../../Firebase/Services/Services";
+import { ModalDataUser } from "../Modal/ModalDataUser";
+import { CartEmpty } from "./CartEmpty";
+import { CartItem } from "./CartItem";
+
 
 export const Cart = () => {
-    const {cart, totalPrecio} = useCartContext();
+    const { cart, handeleDeleteItem, totalPrice } = useContext(context);
 
-    const order = {
-        buyer: {
-            name: 'Paola',
-            email: 'paolanu@gmail.com',
-            phone: '3517658746',
-            address: 'lomito'
-        },
-        items: cart.map(product => ({id: product.id, tittle: product.title, price: product.price, quantity: product.quantity})),
-        total: totalPrecio(),
-    }
-    const handleClick = () => {
-        const db = getFirestore();
-        const ordersCollection = collection(db, 'orders');
-        addDoc(ordersCollection, order)
-        .then(({id}) => console.log(id));
-    }
-    
-
-    if (cart.length === 0){
+    const finishBuy = () => {
+        handleBuy(cart, totalPrice);
+    };
     return (
-        <>
-            <p>No hay elementos en la cesta</p>
-            <Link to='/'>Ir a comprar</Link>
-        </>
+        <div className="cart">
+            <div>
+                <h2 className="title">mi super geek cesta</h2>
+                {cart.length === 0 ? (
+                    <CartEmpty />
+                ) : (
+                    cart.map((item, i) => (
+                        <CartItem
+                            key={i}
+                            imgUrl={item.imgUrl}
+                            cant={item.cant}
+                            category={item.category}
+                            description={item.description}
+                            price={item.price}
+                            title={item.title}
+                            id={item.id}
+                            handeleDeleteItem={handeleDeleteItem}
+                            finishBuy={finishBuy}
+                        />
+                    ))
+                )}
+            </div>
+            <div className="containerPrice">
+                <h2 className="title2">resumen de tu super pedido</h2>
+                <div className="containerTotal">
+                    <h6 className="total">total</h6>
+                    <p className="totalPrice">
+                        <span>${totalPrice}</span>
+                    </p>
+                </div>
+                <ModalDataUser />
+            </div>
+        </div>
     );
-    }
-
-return (
-    <>
-    {
-        cart.map(product => <ItemCart key={product.id} product={product}/>)
-    }
-    <p>
-        Total a Pagar: {totalPrecio()}
-    </p>
-    <button onClick={handleClick}>Emitir Compra</button>
-    </>
-)
-}
+};

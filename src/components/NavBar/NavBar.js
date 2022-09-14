@@ -5,10 +5,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
+
 export const NavBar = () => {
   return(
     <div className='navDiv'><nav className=' navbar navbar-expand-lg navbar-light '>
-    <div>< img className='imgNav'src='https://i.postimg.cc/cJmBsFDP/Morado-Verde-Bonito-y-Tierno-Gaming-y-Tecnolog-a-Logotipo-1.png'/></div>
+    <div>< img className='imgNav'src='https://i.postimg.cc/cJmBsFDP/Morado-Verde-Bonito-y-Tierno-Gaming-y-Tecnolog-a-Logotipo-1.png'></img></div>
   <div className='container-fluid'>
     <button className='navbar-toggler' type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -24,19 +25,16 @@ export const NavBar = () => {
           </NavLink>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><NavLink className="dropdown-item" to='/categoria/Game'>Game</NavLink></li>
-            <li><hr className="dropdown-divider"></hr></li>
             <li><NavLink className="dropdown-item" to='/categoria/Comic'>Comic</NavLink></li>
+            <li><hr className="dropdown-divider"></hr></li>
+            <li><NavLink className="dropdown-item" to='/categoria/Clothes'>Clothes</NavLink></li>
           </ul>
         </li>
         <li><NavLink className="nav-link active" aria-current="page"  to='/'>Contacto</NavLink></li>
       </ul>
-      <form className="d-flex">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="---"></input>
-        <button className='btn btn-outline-success' type="submit">Buscar</button>
-      </form>
+      <NavLink to='/cart'><CartWidget></CartWidget></NavLink>
     </div>
-    <NavLink to='/cart'><CartWidget></CartWidget></NavLink>
-  </div>
+    </div>
 </nav></div>
   );
 }
